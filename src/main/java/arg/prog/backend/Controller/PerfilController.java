@@ -46,7 +46,7 @@ public class PerfilController {
        return  servPerfil.updateDTO(pDto);
     }
     @DeleteMapping("")
-    public PerfilDTO borrarPerfil(@RequestBody PerfilDTO pDto){
-       return  servPerfil.borrarDTO(pDto);
+    public PerfilDTO borrarPerfil(@RequestParam(required = false) Long dni){
+       return  servPerfil.borrarDTO(dni);
     }
 }

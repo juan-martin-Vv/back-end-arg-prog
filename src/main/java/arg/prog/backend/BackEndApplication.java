@@ -25,9 +25,17 @@ public class BackEndApplication {
 	CommandLineRunner run(RollService service, ServPerfil perfil ){
 		return args ->{
 			if(service.sinValores()){
+				System.out.println("inicializando DB");
 				service.save(new Roll(RollEnum.ROLL_USER));
 				service.save(new Roll(RollEnum.ROLL_ADMIN));
-				perfil.saveDTO(new PerfilDTO("Homerin","SimpsomG",20300300,new Date(),"Donalandia","hoo@hoo.ho",PerfilType.principal));
+				perfil.saveDTO(new PerfilDTO(
+					"Homerin",
+					"SimpsomG",
+					20300300,new Date(),
+					"Donalandia",
+					"hoo@hoo.ho",
+					PerfilType.principal
+					));
 			}
 		};
 	}

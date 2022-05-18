@@ -17,6 +17,7 @@ public interface PerfilRepository extends JpaRepository<Perfil, Integer> {
     Optional<Perfil> findByEmail(String email);
 
     Optional<Perfil> findByDniOrEmail(Long dni, String email);
+    Optional<Perfil[]> findAllByDniOrEmail(Long dni, String email);
     
     Optional<Perfil> findByType(PerfilType type);
 

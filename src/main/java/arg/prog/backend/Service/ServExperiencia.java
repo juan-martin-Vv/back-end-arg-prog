@@ -3,6 +3,8 @@ package arg.prog.backend.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +20,7 @@ import arg.prog.backend.Service.Exceptions.ExperienciaException;
 import arg.prog.backend.Service.Exceptions.PerfilException;
 
 @Service
+@Transactional
 @Validated
 public class ServExperiencia {
     @Autowired

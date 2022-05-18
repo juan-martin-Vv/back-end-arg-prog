@@ -60,6 +60,8 @@ public class PerfilDTO {
 
     private List<ProyectoDTO> proyectos;
 
+    private List<SkillDTO> skill;
+
     public PerfilDTO(@NotBlank String nombre, @NotBlank String apellido, @Min(4000000) long dni,
             Date fechaNacimiento, @NotBlank String nacionalidad, @Email String email, PerfilType type) {
         this.nombre = nombre;

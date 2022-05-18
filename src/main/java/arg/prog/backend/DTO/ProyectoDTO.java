@@ -27,4 +27,6 @@ public class ProyectoDTO {
     @NotBlank
     private String image;
 
+    private String linkGit;
+
 }

@@ -46,10 +46,10 @@ public class mainSercurity extends WebSecurityConfigurerAdapter {
         // https://www.baeldung.com/spring-security-csrf
         http.csrf().disable();//.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
         http.authorizeRequests().antMatchers(HttpMethod.GET, "/**").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.POST,"/education","/perfil","/proyect","/experience").hasAuthority("ROLL_ADMIN");
-        http.authorizeRequests().antMatchers(HttpMethod.PUT,"/education","/perfil","/proyect","/experience").hasAuthority("ROLL_ADMIN");
-        http.authorizeRequests().antMatchers(HttpMethod.PATCH,"/education","/perfil","/proyect","/experience").hasAuthority("ROLL_ADMIN");
-        http.authorizeRequests().antMatchers(HttpMethod.DELETE,"/education","/perfil","/proyect","/experience").hasAuthority("ROLL_ADMIN");
+        http.authorizeRequests().antMatchers(HttpMethod.POST,"/skill","/education","/perfil","/proyect","/experience").hasAuthority("ROLL_ADMIN");
+        http.authorizeRequests().antMatchers(HttpMethod.PUT,"/skill","/education","/perfil","/proyect","/experience").hasAuthority("ROLL_ADMIN");
+        http.authorizeRequests().antMatchers(HttpMethod.PATCH,"/skill","/education","/perfil","/proyect","/experience").hasAuthority("ROLL_ADMIN");
+        http.authorizeRequests().antMatchers(HttpMethod.DELETE,"/skill","/education","/perfil","/proyect","/experience").hasAuthority("ROLL_ADMIN");
         http.authorizeRequests().antMatchers("/auth/**").permitAll().anyRequest().authenticated();
         http.exceptionHandling().authenticationEntryPoint(jwtEntryPoint);
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

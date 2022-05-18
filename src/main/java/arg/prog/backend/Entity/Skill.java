@@ -9,33 +9,30 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
 @Entity
-public class Proyecto {
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Skill {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @GeneratedValue(strategy =GenerationType.IDENTITY )
+    private long id;
     @NotBlank
-    private String nombre;
-    @NotBlank
-    private String lenguaje;
-    @NotBlank
-    private String descripcion;
-
-    private String linkGit;
+    private String skill;
     
-    private String image;
-    ///
+    private int value;
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     @JoinColumn(name = "perfil_id")
     private Perfil perfil;
-
 }
