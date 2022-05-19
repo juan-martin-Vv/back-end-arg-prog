@@ -47,6 +47,7 @@ public class mainSercurity extends WebSecurityConfigurerAdapter {
         http.csrf().disable();//.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
         http.authorizeRequests().antMatchers(HttpMethod.GET, "/**").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.POST,"/skill","/education","/perfil","/proyect","/experience").hasAuthority("ROLL_ADMIN");
+        http.authorizeRequests().antMatchers(HttpMethod.OPTIONS,"/skill","/education","/perfil","/proyect","/experience").hasAuthority("ROLL_ADMIN");
         http.authorizeRequests().antMatchers(HttpMethod.PUT,"/skill","/education","/perfil","/proyect","/experience").hasAuthority("ROLL_ADMIN");
         http.authorizeRequests().antMatchers(HttpMethod.PATCH,"/skill","/education","/perfil","/proyect","/experience").hasAuthority("ROLL_ADMIN");
         http.authorizeRequests().antMatchers(HttpMethod.DELETE,"/skill","/education","/perfil","/proyect","/experience").hasAuthority("ROLL_ADMIN");
