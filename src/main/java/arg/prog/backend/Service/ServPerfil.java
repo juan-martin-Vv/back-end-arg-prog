@@ -25,7 +25,6 @@ import arg.prog.backend.Enum.ImageType;
 import arg.prog.backend.Enum.PerfilType;
 import arg.prog.backend.Repository.ImageRepository;
 import arg.prog.backend.Repository.PerfilRepository;
-import arg.prog.backend.Repository.SkillRepository;
 import arg.prog.backend.Service.Exceptions.ErrorSQL;
 import arg.prog.backend.Service.Exceptions.PerfilException;
 import lombok.extern.slf4j.Slf4j;
@@ -64,7 +63,7 @@ public class ServPerfil {
                 perfilRepository.save(temp);
             }
         } 
-        List<Imagenes> temp = new ArrayList<Imagenes>();
+        // List<Imagenes> temp = new ArrayList<Imagenes>();
         List<Imagenes> back = new ArrayList<Imagenes>();
         List<String> back_ground = perfilDTO.getImage_background_header();
         List<String> perfil_img = perfilDTO.getImage_perfil();

@@ -8,7 +8,6 @@ import javax.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.validation.annotation.Validated;
 
 import arg.prog.backend.DTO.SkillDTO;
 import arg.prog.backend.Entity.Perfil;
@@ -17,9 +16,9 @@ import arg.prog.backend.Repository.PerfilRepository;
 import arg.prog.backend.Repository.SkillRepository;
 import arg.prog.backend.Service.Exceptions.PerfilException;
 import arg.prog.backend.Service.Exceptions.SkillException;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
+
+
 @Service
 @Transactional
 public class ServSkill {
