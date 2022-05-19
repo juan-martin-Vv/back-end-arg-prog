@@ -55,9 +55,12 @@ public class JwtFilter extends OncePerRequestFilter {
             log.error("error en filter e.clas:{}", e.getClass());
             log.error("error en filter mensaje:{}", e.getMessage());
         }
-        if (request.getMethod().equals("OTPIONS")) {
+        log.info("metodo :{}", request.getMethod());
+        if (request.getMethod()=="OPTIONS") {
             response.setStatus(HttpStatus.OK.value());
-            System.out.println("options METHOD detec!!");
+           log.info("metodo :{}", request.getMethod());
+           response.sendError(200);
+           return;
         }
         filterChain.doFilter(request, response);
     }
