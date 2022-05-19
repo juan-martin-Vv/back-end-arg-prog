@@ -19,7 +19,7 @@ import arg.prog.backend.Service.ServPerfil;
 
 @RestController
 @RequestMapping("/perfil")
-@CrossOrigin
+// @CrossOrigin
 public class PerfilController {
     @Autowired
     private ServPerfil servPerfil;

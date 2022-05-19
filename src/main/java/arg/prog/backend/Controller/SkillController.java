@@ -18,7 +18,7 @@ import arg.prog.backend.Service.ServSkill;
 
 @RestController
 @RequestMapping("/skill")
-@CrossOrigin
+// @CrossOrigin
 public class SkillController {
     @Autowired
     private ServSkill servSkill;

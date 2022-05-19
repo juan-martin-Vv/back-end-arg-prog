@@ -20,7 +20,7 @@ import arg.prog.backend.Service.ServExperiencia;
 
 @RestController
 @RequestMapping("/experience")
-@CrossOrigin
+// @CrossOrigin
 public class ExperienciaController {
     @Autowired
     private ServExperiencia servExperiencia;

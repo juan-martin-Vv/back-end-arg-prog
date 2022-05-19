@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/proyect")
-@CrossOrigin
+// @CrossOrigin
 public class ProyectoController {
     @Autowired
     private ServProyecto servProyecto;

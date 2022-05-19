@@ -21,7 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin
+// @CrossOrigin
 public class controllerAuth {
     @Autowired
     LoginService loginService;

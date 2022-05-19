@@ -21,7 +21,7 @@ import arg.prog.backend.Service.ServEducacion;
 
 @RestController
 @RequestMapping("/education")
-@CrossOrigin
+// @CrossOrigin
 public class EducacionController {
     @Autowired
     private ServEducacion servEducacion;
