@@ -12,6 +12,5 @@ import arg.prog.backend.Entity.Perfil;
 @Repository
 public interface ExperienciaRepository extends JpaRepository<Experiencia, Integer> {
     Optional<List<Experiencia>> findByPerfil(Perfil perfil);
-
     Optional<Experiencia> findByInstitucionAndPuestoAndPerfil(String inst, String puesto, Perfil perfil);
 }
