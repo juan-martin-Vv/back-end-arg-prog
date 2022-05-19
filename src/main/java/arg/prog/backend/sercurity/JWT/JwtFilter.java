@@ -57,6 +57,7 @@ public class JwtFilter extends OncePerRequestFilter {
         }
         if (request.getMethod().equals("OTPIONS")) {
             response.setStatus(HttpStatus.OK.value());
+            System.out.println("options METHOD detec!!");
         }
         filterChain.doFilter(request, response);
     }
