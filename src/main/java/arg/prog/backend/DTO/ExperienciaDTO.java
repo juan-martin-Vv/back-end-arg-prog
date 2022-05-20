@@ -1,10 +1,6 @@
 package arg.prog.backend.DTO;
 
-import java.util.Date;
-
 import javax.persistence.Basic;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 
 import lombok.Data;

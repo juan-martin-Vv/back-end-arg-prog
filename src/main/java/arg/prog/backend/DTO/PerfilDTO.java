@@ -1,13 +1,10 @@
 package arg.prog.backend.DTO;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Basic;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
