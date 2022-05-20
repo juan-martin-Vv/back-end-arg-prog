@@ -26,10 +26,9 @@ public class ExperienciaDTO {
     private String descripcion;
     private String image;
     @Basic
-    @Temporal(TemporalType.DATE)
-    private Date inicio;
+    
+    private String inicio;
     @Basic
-    @Temporal(TemporalType.DATE)
-    private Date fin;
+    private String fin;
 
 }

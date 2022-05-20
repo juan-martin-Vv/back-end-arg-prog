@@ -31,7 +31,9 @@ public class BackEndApplication {
 				perfil.saveDTO(new PerfilDTO(
 					"Homerin",
 					"SimpsomG",
-					20300300,new Date(),
+					20300300,
+					// new Date(2002,2,1).,
+					"2000-2-1",
 					"Donalandia",
 					"hoo@hoo.ho",
 					PerfilType.principal

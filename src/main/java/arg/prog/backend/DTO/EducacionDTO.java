@@ -27,10 +27,10 @@ public class EducacionDTO {
     private String image;
     private String carrera;
     @NonNull
+    
     @Basic
-    @Temporal(TemporalType.DATE)
-    private Date inicio;
+    private String inicio;
+    
     @Basic
-    @Temporal(TemporalType.DATE)
-    private Date fin;
+    private String fin;
 }
