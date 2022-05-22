@@ -11,7 +11,6 @@ public class CorsConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        // TODO Auto-generated method stub
         registry.addMapping("/**").allowedOrigins("*").allowedMethods("*");
         WebMvcConfigurer.super.addCorsMappings(registry);
     }

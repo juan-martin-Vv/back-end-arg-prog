@@ -25,6 +25,8 @@ public class RollService {
     }
     public boolean sinValores(){
 
-        return rollRepository.findAll().isEmpty();
+      if(rollRepository.findAll().size()>0)
+      return false;
+      return true;
     }
 }

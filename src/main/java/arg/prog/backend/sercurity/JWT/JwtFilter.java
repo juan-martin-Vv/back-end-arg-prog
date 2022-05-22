@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -55,13 +54,13 @@ public class JwtFilter extends OncePerRequestFilter {
             log.error("error en filter e.clas:{}", e.getClass());
             log.error("error en filter mensaje:{}", e.getMessage());
         }
-        log.info("metodo :{}", request.getMethod());
-        if (request.getMethod()=="OPTIONS") {
-            response.setStatus(HttpStatus.OK.value());
-           log.info("metodo :{}", request.getMethod());
-           response.sendError(200);
-           return;
-        }
+        // log.info("metodo :{}", request.getMethod());
+        // if (request.getMethod()=="OPTIONS") {
+        //     response.setStatus(HttpStatus.OK.value());
+        //    log.info("metodo :{}", request.getMethod());
+        //    response.sendError(200);
+        //    return;
+        // }
         filterChain.doFilter(request, response);
     }
 
