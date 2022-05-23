@@ -1,5 +1,7 @@
 package arg.prog.backend.sercurity;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,16 +16,22 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
 //import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import arg.prog.backend.sercurity.JWT.JwtEntryPoint;
 import arg.prog.backend.sercurity.JWT.JwtFilter;
 import arg.prog.backend.sercurity.Service.UserDetailsServiceImpl;
+import lombok.Value;
 
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class mainSercurity extends WebSecurityConfigurerAdapter {
+
+    
     @Autowired
     UserDetailsServiceImpl userDetailsServiceImpl;
     @Autowired
@@ -42,7 +50,7 @@ public class mainSercurity extends WebSecurityConfigurerAdapter {
     ////
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.cors();
+        http.cors().and();
         // https://www.baeldung.com/spring-security-csrf
         http.csrf().disable();//.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
         http.authorizeRequests().antMatchers(HttpMethod.GET, "/**").permitAll();
@@ -75,5 +83,16 @@ public class mainSercurity extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsServiceImpl).passwordEncoder(passwordEncoder());
     }
+    ////
+    
+    @Bean
+	CorsConfigurationSource corsConfigurationSource() {
+		CorsConfiguration configuration = new CorsConfiguration();
+		configuration.setAllowedOrigins(Arrays.asList("https://front-arg-jmvv.web.app/"));
+		configuration.setAllowedMethods(Arrays.asList("GET","POST","DELETE","UPDATE"));
+		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+		source.registerCorsConfiguration("/**", configuration);
+		return source;
+	}
 
 }
